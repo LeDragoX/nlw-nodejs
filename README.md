@@ -1,4 +1,4 @@
-# NLW-NodeJS (06/2021)
+# NLW-NodeJS (06/2021) | NLW Valoriza
 
 ## Aula 1
 ### Step-by-Step
