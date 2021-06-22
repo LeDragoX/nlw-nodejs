@@ -1,6 +1,7 @@
 # NLW-NodeJS (06/2021)
 
-## Step-by-Step
+## Aula 1
+### Step-by-Step
 
 Install Node, NPM, Yarn
 Install Insomnia
@@ -41,3 +42,5 @@ On `package.json` add after the "license" line
   # Use this to run the server (including any updates you made)
   yarn dev
 ```
+
+## Aula 2
