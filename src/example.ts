@@ -1,8 +1,10 @@
 // nomeDaVariavel: tipoDaVariavel
 
 interface Usuario {
-  // var? = Optional
-  email: string, nome: string, telefone?: string
+  // var? = Opcional
+  email: string, 
+  nome: string, 
+  telefone?: string,
 }
 
 function enviarEmail({email, nome, telefone}: Usuario) {
@@ -10,7 +12,7 @@ function enviarEmail({email, nome, telefone}: Usuario) {
 }
 
 enviarEmail({
-  email: "plinio@gmail.com",
+  email: "plinio@email.com",
   nome: "Plínio",
   //telefone: "+5500999999999"
 });
