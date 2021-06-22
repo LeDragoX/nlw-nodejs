@@ -3,9 +3,10 @@
 ## Aula 1
 ### Step-by-Step
 
-Install Node, NPM, Yarn
-Install Insomnia
-Install Beekeepers Studio
+#### Install:
+- Node, NPM, Yarn
+- Insomnia
+- Beekeepers Studio
 
 ```zsh
   yarn init -y            # Initialize Project Repository
