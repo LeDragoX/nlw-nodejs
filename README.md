@@ -18,14 +18,44 @@ Annotation [`src/server.ts`](src/server.ts):
 
 // Request  => Vem do Client (entrada)
 // Response => Vem do Server (saída)
+
+app.get("/test", (request, response) => {
+  return response.send("|GET| Olá manito!");
+});
+
+app.post("/test-post", (request, response) => {
+  return response.send("|POST| Olá manito!");
+});
+
+app.put("/test-put", (request, response) => {
+  return response.send("|PUT| Olá manito!");
+});
+
+app.delete("/test-delete", (request, response) => {
+  return response.send("|DELETE| Olá manito!");
+});
+
+app.patch("/test-patch", (request, response) => {
+  return response.send("|PATCH| Olá manito!");
+});
 ```
 
 ### Step-by-Step
 
 #### Install:
 - Node, NPM, Yarn
-- Insomnia
-- Beekeepers Studio
+```zsh
+# Curl
+sudo apt install -y curl
+# NodeJS + NPM
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Yarn
+npm install --global yarn
+```
+- [Insomnia](https://insomnia.rest/download)
+- [Beekeepers Studio](https://www.beekeeperstudio.io/)
+
 
 ```zsh
   yarn init -y            # Initialize Project Repository
@@ -64,6 +94,12 @@ On [`package.json`](package.json) add after the '"license":' line
 ```
 
 ## Aula 2 - User Structure
+
+### Regras
+
+- Cadastro de usuário
+  - [ x ] Não é permitido cadastrar mais de um usuário com o mesmo e-mail
+  - [ x ] Não é permitido cadastrar usuário sem e-mail
 
 ### Working with Database integration - SQLite
 
@@ -160,10 +196,39 @@ yarn add @types/uuid -D
 
 Migrations: Entity (User) <-> ORM <-> DB Repositories
 
-Service: Server -> (   ) -> SERVICE -> Repositories -> DB
+Service: Server -> (   ) -> SERVICE (Validation) -> Repositories -> DB
 
 Controller (Request / Response): -> Server -> Controller -> Service -> operations()...
 
-## Aula 3 -
+## Aula 3 - Continuing the application
+
+### Regras
+
+- Cadastro de TAG
+  - [ x ] Não é permitido cadastrar mais de uma tag com o mesmo nome
+  - [ x ] Não é permitido cadastrar tag sem nome
+  - [ x ] Não é permitido o cadastro por usuários que não sejam administradores
+
+Server -> routes -> Controller -> Service (throw new Error)
+
+```zsh
+# Import async errors detection:
+yarn add express-async-errors
+# Create new migration for tags
+yarn typeorm migration:create -n CreateTags
+# Run migration
+yarn typeorm migration:run
+# Create Tag entity
+yarn typeorm entity:create -n Tag
+```
+
 ## Aula 4 -
+
+### Regras
+
+- Cadastro de elogios
+  - [ x ] Não é permitido um usuário cadastrar um elogio para si
+  - [ x ] Não é permitido cadastrar elogios para usuários inválidos
+  - [ x ] O usuário precisa estar autenticado na aplicação
+
 ## Aula 5 -
