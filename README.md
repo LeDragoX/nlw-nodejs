@@ -222,7 +222,7 @@ yarn typeorm migration:run
 yarn typeorm entity:create -n Tag
 ```
 
-## Aula 4 -
+## Aula 4 - Working with WebSockets
 
 ### Regras
 
@@ -230,5 +230,37 @@ yarn typeorm entity:create -n Tag
   - [ x ] Não é permitido um usuário cadastrar um elogio para si
   - [ x ] Não é permitido cadastrar elogios para usuários inválidos
   - [ x ] O usuário precisa estar autenticado na aplicação
+
+This will use the [JWT](https://jwt.io/) library.
+```zsh
+# Install JWT lib
+yarn add jsonwebtoken
+yarn add @types/jsonwebtoken -D
+```
+
+Changes on the Project
+
+```zsh
+# Create a migration to Alter the User Table
+yarn typeorm migration:create -n AlterUserAddPassword
+# After adding the necessary modifications
+yarn typeorm migration:run
+
+# Library to Encrypt passwords
+yarn add bcryptjs
+yarn add @types/bcryptjs -D
+
+```
+### If you want an external hash code
+
+Use [MD5 Hash Generator](https://www.md5hashgenerator.com/) to transform:
+  ledragoxnlwvalorizanodejs -> a8a2d0c0f2311a246a45d1a5045c95e6
+
+```zsh
+# Compliments migration
+yarn typeorm migration:create -n CreateCompliments
+# After adding the necessary modifications
+yarn typeorm migration:run
+```
 
 ## Aula 5 -
