@@ -263,7 +263,7 @@ yarn typeorm migration:create -n CreateCompliments
 yarn typeorm migration:run
 ```
 
-Registring a new Compliment:
+Registering a new Compliment:
 ```json
 {
 	"tag_id": "8d352bfc-1087-4dfe-ac8e-b67ced92286e",
