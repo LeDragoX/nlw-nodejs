@@ -263,4 +263,14 @@ yarn typeorm migration:create -n CreateCompliments
 yarn typeorm migration:run
 ```
 
+Registring a new Compliment:
+```json
+{
+	"tag_id": "8d352bfc-1087-4dfe-ac8e-b67ced92286e",
+	"user_sender": "1662a6ed-dd0f-4765-916b-d0e097ba2829",
+	"user_receiver": "0e93d95e-1431-400e-845b-831047c77ded",
+	"message": "Obrigado pelo aulão Dani!"
+}
+```
+
 ## Aula 5 -

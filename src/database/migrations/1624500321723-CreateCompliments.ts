@@ -61,7 +61,7 @@ export class CreateCompliments1624500321723 implements MigrationInterface {
                     }
                 ]
             })
-        )
+        );
 
         // await queryRunner.createForeignKey(
         //     "compliments",
