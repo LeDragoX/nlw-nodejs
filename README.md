@@ -222,7 +222,7 @@ yarn typeorm migration:run
 yarn typeorm entity:create -n Tag
 ```
 
-## Aula 4 - Working with WebSockets
+## Aula 4 - Working with JWT
 
 ### Regras
 
