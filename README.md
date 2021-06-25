@@ -273,4 +273,16 @@ Registering a new Compliment:
 }
 ```
 
-## Aula 5 -
+## Aula 5 - Concluding the project
+
+On [`tsconfig.json`](tsconfig.json) change:
+```json
+    "typeRoots": [
+      "./src/@types"
+    ], /* List of folders to include type definitions from. */
+```
+
+```zsh
+# Add a new library: Class Transformer
+yarn add class-transformer
+```
