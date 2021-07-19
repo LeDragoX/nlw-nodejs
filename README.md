@@ -1,6 +1,7 @@
 # NLW-NodeJS (06/2021) | NLW Valoriza
 
 ## Tecnologias utilizadas:
+- NodeJS => TS;
 - TypeScript;
 - ExpressJS / Express-Async-Errors;
 - TS-Node-Dev;
@@ -33,7 +34,9 @@ yarn dev
 
 # As node don't understand 'typescript', do this
 # to convert index.ts => index.js
-yarn tsc
+# With ts-node-dev, this is no longer needed
+#yarn tsc
+
 # Add 'express'
 yarn add express -D
 yarn add @types/express -D
@@ -53,6 +56,9 @@ yarn add typeorm reflect-metadata sqlite3
 yarn add uuid
 yarn add @types/uuid -D
 
+# Import async errors detection:
+yarn add express-async-errors
+
 # Install JWT lib
 yarn add jsonwebtoken
 yarn add @types/jsonwebtoken -D
@@ -60,8 +66,6 @@ yarn add @types/jsonwebtoken -D
 # Library to Encrypt passwords
 yarn add bcryptjs
 yarn add @types/bcryptjs -D
-
-
 ```
 
 
@@ -238,8 +242,6 @@ Controller (Request / Response): -> Server -> Controller -> Service -> operation
 Server -> routes -> Controller -> Service (throw new Error)
 
 ```zsh
-# Import async errors detection:
-yarn add express-async-errors
 # Create new migration for tags
 yarn typeorm migration:create -n CreateTags
 # Run migration

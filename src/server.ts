@@ -24,4 +24,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
   });
 });
 
-app.listen(3000, () => console.log("Server is running N L W :D"));
+app.listen(3000, () => console.log("Server is running (localhost:3000/) N L W :D"));
