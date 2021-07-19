@@ -1,6 +1,74 @@
 # NLW-NodeJS (06/2021) | NLW Valoriza
 
+## Tecnologias utilizadas:
+- TypeScript;
+- ExpressJS / Express-Async-Errors;
+- TS-Node-Dev;
+- TypeORM / Reflect-Metadata / SQLite;
+- UUID;
+- JWT (Json Web Token);
+- BCryptsJS;
+
+## Usage
+
+### **Software Requirements:**
+```sh
+# Curl
+sudo apt install -y curl
+# NodeJS + NPM
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Yarn
+npm install --global yarn
+```
+
+### **Dependencies:**
+```sh
+yarn init -y            # Initialize Project Repository
+yarn add typescript -D  # Install Typescript dependencies | -D to install all dependencies
+yarn tsc --init         # Init Typescript
+
+# Use this to run the server (including any updates you made)
+yarn dev
+
+# As node don't understand 'typescript', do this
+# to convert index.ts => index.js
+yarn tsc
+# Add 'express'
+yarn add express -D
+yarn add @types/express -D
+
+# To automatize .ts => .js conversion
+# Use this library to spend less time and be more productive
+yarn add ts-node-dev -D
+
+# For SQLite (This):
+yarn add typeorm reflect-metadata sqlite3 
+# For PostgreSQL: 
+#yarn add typeorm reflect-metadata mysql 
+# For MySQL:
+#yarn add typeorm reflect-metadata mysql
+
+# Add the *uuid* library to yarn:
+yarn add uuid
+yarn add @types/uuid -D
+
+# Install JWT lib
+yarn add jsonwebtoken
+yarn add @types/jsonwebtoken -D
+
+# Library to Encrypt passwords
+yarn add bcryptjs
+yarn add @types/bcryptjs -D
+
+
+```
+
+
+
 ## Aula 1 - Node introduction
+<details>
+  <summary>CLICK HERE TO SHOW CONTENT</summary>
 
 *Annotations will be added out from code, to keep the code CLEAN.*
 
@@ -44,41 +112,13 @@ app.patch("/test-patch", (request, response) => {
 
 #### Install:
 - Node, NPM, Yarn
-```zsh
-# Curl
-sudo apt install -y curl
-# NodeJS + NPM
-curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
-# Yarn
-npm install --global yarn
-```
+
 - [Insomnia](https://insomnia.rest/download)
 - [Beekeepers Studio](https://www.beekeeperstudio.io/)
-
-
-```zsh
-  yarn init -y            # Initialize Project Repository
-  yarn add typescript -D  # Install Typescript dependencies | -D to install all dependencies
-  yarn tsc --init         # Init Typescript
-```
 
 On [`tsconfig.json`](tsconfig.json) change:
 ```json
   "strict": false,                                 /* Enable all strict type-checking options. */
-```
-
-```zsh
-  # As node don't understand 'typescript', do this
-  # to convert index.ts => index.js
-  yarn tsc
-  # Add 'express'
-  yarn add express -D
-  yarn add @types/express -D
-
-  # To automatize .ts => .js conversion
-  # Use this library to spend less time and be more productive
-  yarn add ts-node-dev -D
 ```
 
 On [`package.json`](package.json) add after the '"license":' line
@@ -87,13 +127,12 @@ On [`package.json`](package.json) add after the '"license":' line
     "dev": "ts-node-dev src/server.ts"
   },
 ```
-
-```zsh
-  # Use this to run the server (including any updates you made)
-  yarn dev
-```
+</details>
 
 ## Aula 2 - User Structure
+
+<details>
+  <summary>CLICK HERE TO SHOW CONTENT</summary>
 
 ### Regras
 
@@ -120,19 +159,6 @@ TIPOS DE PARÂMETROS:
 *This will use an ORM to ease the integration process,* 
 *but we can use native drivers from other DBs too.*
 - [TypeORM](https://typeorm.io/)
-
-- For SQLite (This):
-```zsh
-yarn add typeorm reflect-metadata sqlite3 
-```
-- For PostgreSQL: 
-```zsh
-yarn add typeorm reflect-metadata mysql 
-```
-- For MySQL:
-```zsh
-yarn add typeorm reflect-metadata mysql 
-```
 
 *Migrations are good for a team creating individual tables on the DB.*
 *They store the history from the Entities*
@@ -188,19 +214,19 @@ On [`tsconfig.json`](tsconfig.json) set:
   "emitDecoratorMetadata": true,               /* Enables experimental support for emitting type metadata for decorators. */
 ```
 
-Add the *uuid* library to yarn:
-```zsh
-yarn add uuid
-yarn add @types/uuid -D
-```
 
 Migrations: Entity (User) <-> ORM <-> DB Repositories
 
 Service: Server -> (   ) -> SERVICE (Validation) -> Repositories -> DB
 
 Controller (Request / Response): -> Server -> Controller -> Service -> operations()...
+</details>
+
 
 ## Aula 3 - Continuing the application
+
+<details>
+  <summary>CLICK HERE TO SHOW CONTENT</summary>
 
 ### Regras
 
@@ -221,8 +247,12 @@ yarn typeorm migration:run
 # Create Tag entity
 yarn typeorm entity:create -n Tag
 ```
+</details>
 
 ## Aula 4 - Working with JWT
+
+<details>
+  <summary>CLICK HERE TO SHOW CONTENT</summary>
 
 ### Regras
 
@@ -232,11 +262,6 @@ yarn typeorm entity:create -n Tag
   - [ x ] O usuário precisa estar autenticado na aplicação
 
 This will use the [JWT](https://jwt.io/) library.
-```zsh
-# Install JWT lib
-yarn add jsonwebtoken
-yarn add @types/jsonwebtoken -D
-```
 
 Changes on the Project
 
@@ -245,11 +270,6 @@ Changes on the Project
 yarn typeorm migration:create -n AlterUserAddPassword
 # After adding the necessary modifications
 yarn typeorm migration:run
-
-# Library to Encrypt passwords
-yarn add bcryptjs
-yarn add @types/bcryptjs -D
-
 ```
 ### If you want an external hash code
 
@@ -272,8 +292,13 @@ Registering a new Compliment:
 	"message": "Obrigado pelo aulão Dani!"
 }
 ```
+</details>
+
 
 ## Aula 5 - Concluding the project
+
+<details>
+  <summary>CLICK HERE TO SHOW CONTENT</summary>
 
 On [`tsconfig.json`](tsconfig.json) change:
 ```json
@@ -286,3 +311,4 @@ On [`tsconfig.json`](tsconfig.json) change:
 # Add a new library: Class Transformer
 yarn add class-transformer
 ```
+</details>
