@@ -1,6 +1,6 @@
 # NLW Valoriza - NLW6-NodeJS (06/2021)
 
-## Resumo ()
+## Resumo
 
 6ª NextLevelWeek da RocketSeat - Trilha do NodeJS, ensinando a utilizar os frameworks backend para criação de rotas e gerenciamento de dados, o projeto NWL Valoriza!
 
