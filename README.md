@@ -78,7 +78,7 @@ yarn add @types/bcryptjs -D
 ## Aula 1 - Node introduction
 
 <details>
-  <summary>CLICK HERE TO SHOW CONTENT</summary>
+  <summary>Click to expand</summary>
 
 _Annotations will be added out from code, to keep the code CLEAN._
 
@@ -147,7 +147,7 @@ On [`package.json`](package.json) add after the '"license":' line
 ## Aula 2 - User Structure
 
 <details>
-  <summary>CLICK HERE TO SHOW CONTENT</summary>
+  <summary>Click to expand</summary>
 
 ### Regras
 
@@ -251,7 +251,7 @@ Controller (Request / Response): -> Server -> Controller -> Service -> operation
 ## Aula 3 - Continuing the application
 
 <details>
-  <summary>CLICK HERE TO SHOW CONTENT</summary>
+  <summary>Click to expand</summary>
 
 ### Regras
 
@@ -276,7 +276,7 @@ yarn typeorm entity:create -n Tag
 ## Aula 4 - Working with JWT
 
 <details>
-  <summary>CLICK HERE TO SHOW CONTENT</summary>
+  <summary>Click to expand</summary>
 
 ### Regras
 
@@ -324,7 +324,7 @@ Registering a new Compliment:
 ## Aula 5 - Concluding the project
 
 <details>
-  <summary>CLICK HERE TO SHOW CONTENT</summary>
+  <summary>Click to expand</summary>
 
 On [`tsconfig.json`](tsconfig.json) change:
 
